@@ -1,0 +1,218 @@
+MTEC1003 — LAB 02 (revised 8/9/20 —lg)
+
+LAB 2 / PART 3: Shell Scripting, Permissions, Editing Text, Date and Time
+
+==========
+Follow the instructions line-by-line.  
+
+* Type in the commands as is, but ignore the beginning prompt.  
+* Enter, tab, up and down are represented by <ENTER><TAB>,<UP> and <DOWN>.  
+* "No output" or "nothing happens" are valid answers to any of the questions.
+==========
+
+
+==========
+We're going to be writing a shell script. First, though... let's figure out what day and time it is!
+==========
+
+==========
+1. What day and time is it?
+
+What command did you use, and what was its output?
+----------
+date
+Tue Sep 14 18:17:36 EDT 2021
+
+
+
+
+
+==========
+2. Print out a calendar for this month.
+
+What command did you use, and what was its output?
+----------
+bash: Cal: command not found
+
+
+
+
+
+
+
+==========
+3. Go to your home directory. 
+Then navigate to your mtec1003-lab-02 folder with a single command. 
+Finally, verify that you're in the right place.
+
+What 3 commands did you use to do this?
+----------
+$ cd
+$ cd mtec1003-lab-02
+rober@LAPTOP-P05RMFJL MINGW64 ~/mtec1003-lab-02
+
+
+
+
+
+
+==========
+4. Create an empty file called copy_to_backup.sh. 
+Verify that the file exists.
+
+What commands did you use to do this?
+----------
+touch copy_to_backup_.sh
+ ls
+copy_to_backup_.sh ( the result from the listing)
+
+
+
+
+
+
+
+
+==========
+5. What are the permissions on your copy_to_backup.sh.
+
+What command did you use to find the permissions?
+----------
+total 0
+-rw-r--r-- 1 rober 197609 0 Sep 14 18:21 copy_to_backup_.sh
+
+
+
+
+
+
+
+==========
+6. Change the permissions so that this file is executable by the user.
+Verify the new permissions.
+
+What commands did you use to do this?  What was the output?
+----------
+chmod u+x copy_to_backup_.sh
+
+
+
+
+
+
+==========
+7. Try executing the file!
+
+$ ./copy_to_backup.sh
+
+What command did you use to try to execute the file? What happens?
+----------
+bash: ./copy_to_backup.sh: No such file or directory
+
+
+
+
+
+==========
+8. Open the file with nano
+
+What command did you use to do this?
+----------
+
+
+
+
+
+
+==========
+9. In your file, write the commands to do the following
+
+a. create a directory called backup 
+b. copy all of the txt files in the current directory to the backup directory (use *.txt)
+c. print out "I'm done backing up"
+
+Don't forget the first line of your shell script! It should begin with #!/bin/bash)!
+
+Write out the code you typed into your file below...
+----------
+#!/bin/bash
+mkdir backup
+cp -r -v *.txt backup
+# -r recursive = all files are matched
+-v verbase = print the details for each file that is copied
+ echo "I'm done backing up"
+
+
+
+
+
+
+==========
+10. Create a directory in your home folder called test
+----------
+
+
+
+==========
+11. Go into that directory and create two empty files... 1.txt and 2.txt
+
+What commands did you use to do this?
+----------
+mkdir 1.txt
+mkdir 2.txt
+
+
+
+
+
+
+==========
+12. Move the script that you created into this directory.
+
+What commands did you use to do this?
+----------
+$ ls -l
+total 1
+drwxr-xr-x 1 rober 197609   0 Sep 16 23:57  1.txt/
+drwxr-xr-x 1 rober 197609   0 Sep 16 23:57  2.txt/
+-rwxr-xr-x 1 rober 197609 180 Sep 16 23:27 'Atom for lab part 3'* ( proof it is here , I had to manually do it becuase I was confused) 
+
+
+
+
+
+
+
+==========
+13. Run your script.
+
+What commands did you use to do this?
+----------
+ #myscript.sh.sh*
+
+
+
+
+
+==========
+14. Verify that a backup folder was created in your test directory... with copies of the files present.
+
+What commands did you use to do this?  Show the output. 
+----------
+$ ls -l
+total 1
+drwxr-xr-x 1 rober 197609   0 Sep 16 23:57 1.txt/
+drwxr-xr-x 1 rober 197609   0 Sep 16 23:57 2.txt/
+drwxr-xr-x 1 rober 197609   0 Sep 17 01:27 backup/
+-rwxr-xr-x 1 rober 197609 180 Sep 16 23:27 myscript.sh.sh*
+
+
+
+
+
+
+==========
+15. To finish up, using your mouse or with Terminal commands, save this file and be sure it's inside your mtec1003-lab-02 folder. (If not, move it into this folder.)
+
+When finished, be sure to COMMIT your files to your GitHub repository for week 2 labs. Follow the instructions on the Course Website under Week #2...
+----------
